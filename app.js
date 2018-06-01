@@ -1,15 +1,34 @@
 $(document).ready(function(){
-  // $('body').html('<p>HW</p>');
+  let storedData = JSON.parse(localStorage.getItem('myFormTextData')) || [];
+
+  const populateList = () => {
+    $('.existingList').html('');
+    storedData.forEach(ele => {
+      if (!ele) return;
+      $('.existingList').append(`<li>${ele.title}</li>`)
+    });
+  };
+
+  populateList();
+
   $('.submitForm').on('click', function() {
     let $textFieldValue = $('.textField').val();
+    let $title = $('.codeTitle').val();
     $('.debug').text($textFieldValue);
 
-    localStorage.setItem('myFormTextData', $textFieldValue);
+    let obj = {
+      title: $title,
+      snippet: $textFieldValue
+    };
+    storedData.push(obj)
+    console.log(storedData);
+    let formattedData = JSON.stringify(storedData);
+    localStorage.setItem('myFormTextData', formattedData);
+    populateList();
   });
 
-
-  $('.textField').on('keyup', function () {
-    let textFieldValue = $('.textField').val();
-    $('.debug').text(textFieldValue);
+  $('.getData').on('click', function() {
+    let retrieveData = localStorage.getItem('myFormTextData');
+    $('.debug').text(retrieveData);
   })
 });
