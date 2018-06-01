@@ -14,7 +14,7 @@ $(document).ready(function(){
   $('.submitForm').on('click', function() {
     let $textFieldValue = $('.textField').val();
     let $title = $('.codeTitle').val();
-    $('.debug').text($textFieldValue);
+    $('.snippetDisplay').text($textFieldValue);
 
     let obj = {
       title: $title,
@@ -28,7 +28,13 @@ $(document).ready(function(){
   });
 
   $('.getData').on('click', function() {
-    let retrieveData = localStorage.getItem('myFormTextData');
-    $('.debug').text(retrieveData);
+    let retrieveData = $('.titleSearch').val();
+    let $snippetDisplay = $('.snippetDisplay');
+    let match = storedData.filter(ele => {
+      return ele.title === retrieveData;
+    }).slice(0, 1);
+    
+    $('.snippetDisplay').text(match[0].snippet);
+    console.log(match);
   })
 });

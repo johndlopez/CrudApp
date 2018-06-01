@@ -10,4 +10,4 @@ Goals:
 - [x] Have two fields, one is a short name the other is the snippet
 - [x] going to store the name and code inside localStorage
 - [x] display all snippets
-- [ ] search for a snippet using the name
+- [x] search for a snippet using the name
