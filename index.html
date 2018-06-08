@@ -4,21 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Snippet</title>
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Nunito|Open+Sans:400,700" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
   <script src='./lib/jquery.js'></script>
   <script src='app.js'></script>
 </head>
 <body>
-  <div class="inputArea">
-    <input class="codeTitle" type="text"></div>
-    <textarea class='textField' type='text' name='firstInputField'></textarea>
-    <button class="submitForm">Click to save texts</button>
-    <button class="getData">Load Message</button>
+  <div class="navBar">
+    <h4 class="appName">Snippet</h4>
+    <h4 class="about">About</h4>
   </div>
-  <code class="snippetDisplay"></code>
-    <div class="sidebar">
-      <input class="titleSearch" type="text"></div>
-      <ul class="existingList"></ul>
+  <div class="primaryContainer">
+    <div class="snippetSection">
+      <div class="inputArea">
+        <h1>Snippet Name</h1>
+        <input class="codeTitle" type="text">
+        <textarea class='textField' type='text' name='firstInputField' cols=60 rows=5></textarea>
+        <div class="buttonContainer">
+          <button class="submitForm">Click to save texts</button>
+          <button class="getData">Load Message</button>
+        </div>
+      </div>
+      <code class="snippetDisplay"></code>
     </div>
+      <div class="sidebar">
+        <input class="titleSearch" type="text">
+        <ul class="existingList"></ul>
+      </div>
+  </div>
+  <footer>
+  </footer>
+
 </body>
 </html>
